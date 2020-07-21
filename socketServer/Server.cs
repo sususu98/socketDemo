@@ -78,10 +78,14 @@ namespace socketDemo
                     byte[] buffer = new byte[1024 * 1024 * 2];
                     int r = socketSend.Receive(buffer);
                     if (r == 0)
+                    {
+                        ShowMsg(socketSend.RemoteEndPoint.ToString() + "中断了连接");
                         break;
+                    }
+                        
+
                     string str = Encoding.UTF8.GetString(buffer, 0, r);
-                    if (str == "exit")
-                        break;
+                    
                     ShowMsg(socketSend.RemoteEndPoint + ":" + str + "");
                 }
                 catch { }
