@@ -1,2 +1,6 @@
 obj
 bin
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
