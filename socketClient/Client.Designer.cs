@@ -34,7 +34,7 @@
             this.textInfo = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textIP = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textMsg = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -76,13 +76,13 @@
             this.textIP.Size = new System.Drawing.Size(257, 53);
             this.textIP.TabIndex = 4;
             // 
-            // textBox1
+            // textMsg
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 417);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(622, 168);
-            this.textBox1.TabIndex = 8;
+            this.textMsg.Location = new System.Drawing.Point(85, 417);
+            this.textMsg.Multiline = true;
+            this.textMsg.Name = "textMsg";
+            this.textMsg.Size = new System.Drawing.Size(622, 168);
+            this.textMsg.TabIndex = 8;
             // 
             // button2
             // 
@@ -93,6 +93,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "发送";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Client
             // 
@@ -100,7 +101,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 744);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textMsg);
             this.Controls.Add(this.textPort);
             this.Controls.Add(this.textInfo);
             this.Controls.Add(this.button1);
@@ -121,7 +122,7 @@
         private System.Windows.Forms.TextBox textInfo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textIP;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textMsg;
         private System.Windows.Forms.Button button2;
     }
 }

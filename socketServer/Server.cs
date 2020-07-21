@@ -48,7 +48,7 @@ namespace socketDemo
             catch { }
             
         }
-
+        Socket socketSend;
         private void Listen(object o)
         {
             Socket socketWatch = o as Socket;
@@ -56,7 +56,7 @@ namespace socketDemo
             {
                 try
                 {
-                    Socket socketSend = socketWatch.Accept();
+                    socketSend = socketWatch.Accept();
                     ShowMsg(socketSend.RemoteEndPoint.ToString() + ":" + "连接成功");
                     Thread th = new Thread(Recive);
                     th.IsBackground = true;
@@ -87,6 +87,19 @@ namespace socketDemo
                 catch { }
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string str = textSend.Text;
+                ShowMsg("我："+str);
+                byte[] buffer = Encoding.UTF8.GetBytes(str);
+                socketSend.Send(buffer);
+                textSend.Clear();
+            }
+            catch { }
         }
     }
 }
